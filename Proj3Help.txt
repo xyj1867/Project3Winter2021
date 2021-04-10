@@ -1,7 +1,8 @@
 Commands:
 
-- [bars|companies|countries|regions], default=bars
+- [bars|companies|countries|regions|help], default=bars
     - Lists chocolate bars, sellers, countries or regions, according to the specified parameters.
+    - Lists commands and parameters if it is help.
 
 Parameters:
 
