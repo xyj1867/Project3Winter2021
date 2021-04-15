@@ -209,6 +209,13 @@ def process_command(command):
     # print(result)
     return result
 
+def is_float(a_string):
+    try:
+        num = float(a_string)
+        return True
+    except:
+        return False
+
 
 def load_help_text():
     ''' load the help text
@@ -250,7 +257,11 @@ def print_formatted_output(high_level, sql_result):
     for j in sql_result:
         trimmed_result = []
         for item in j:
-            if len(str(item)) > 12:
+            if is_float(item):
+                num = float(item)
+                # print(round(num, 1))
+                trimmed_result.append(str(round(num, 1)))
+            elif len(str(item)) > 12: 
                 trimmed_result.append(str(item)[:12]+"...")
             else:
                 trimmed_result.append(item)
